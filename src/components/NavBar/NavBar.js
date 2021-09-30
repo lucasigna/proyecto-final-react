@@ -2,7 +2,7 @@ import React from 'react'
 import { Logo } from "./Logo";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import { CartWidget } from "./CartWidget";
-import './NavBar.css';
+import './NavBar.scss';
 
 
 export const NavBar = () => {
