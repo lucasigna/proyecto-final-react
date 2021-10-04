@@ -64,7 +64,7 @@ header{
     height: 0;
 }
   
-.slider {
+.sliderMode {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -76,7 +76,7 @@ header{
     transition: .4s;
 }
   
-.slider:before {
+.sliderMode:before {
     position: absolute;
     content: "";
     height: 25px;
@@ -88,21 +88,71 @@ header{
     transition: .4s;
 }
   
-input:focus + .slider {
+input:focus + .sliderMode {
     box-shadow: 0 0 1px #2196F3;
 }
   
-input:checked + .slider:before {
+input:checked + .sliderMode:before {
     -webkit-transform: translateX(28px);
     -ms-transform: translateX(28px);
     transform: translateX(29px);
 }
-  
-/* Rounded sliders */
-.slider.round {
+
+.sliderMode.round {
     border-radius: 34px;
 }
   
-.slider.round:before {
+.sliderMode.round:before {
     border-radius: 50%;
+}
+
+/* Para vista en tablet */
+
+@media only screen and (min-width: 600px) and (max-width: 960px) {
+
+}
+
+/* Para vista en celular */
+
+@media only screen and (max-width: 600px) {
+    
+    header{
+        display: grid;
+        grid-template-areas: "logo cart" "mode mode";
+        .logoHeader{
+            grid-area: logo;
+            h1{
+                font-size: 20px;
+            }
+            .logo{
+                height: 30px;
+                margin-right: 5px;
+            }
+        }
+        .cartWidget{
+            grid-area: cart;
+            div{
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: $colorRosa;
+                border-radius: 50%;
+                height: 15px;
+                width: 15px;
+                font-size: 13px;
+                text-align: center;
+                color: $colorBlancoFondo;
+                font-weight: 700;
+                padding: 1px;
+            }
+            .carrito{
+                height: 30px;
+            }
+        }
+        .darkModeSwitch{
+            grid-area: mode;
+            margin: 0 auto;
+        }
+    }
+
 }

@@ -2,12 +2,16 @@
 import './App.scss';
 import { NavBar } from "./components/NavBar/NavBar";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { Filters } from "./components/Filters/Filters";
 
 function App() {
   return (
     <>
-     <NavBar/>
-     <ItemListContainer greeting="Gracias por confiar en nosotros"/>
+      <NavBar/>
+      <div className="main">
+        <Filters/>
+        <ItemListContainer/>
+      </div>
     </>
   );
 }

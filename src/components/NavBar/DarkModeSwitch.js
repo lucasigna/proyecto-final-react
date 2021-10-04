@@ -8,7 +8,7 @@ export const DarkModeSwitch = () => {
             <img src={sol} alt="Sol - Modo diurno"/>
             <label className="switch">
                 <input type="checkbox"/>
-                <span className="slider round"></span>
+                <span className="sliderMode round"></span>
             </label>
             <img src={luna} alt="Luna - Modo nocturno"/>
         </div>
