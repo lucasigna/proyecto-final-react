@@ -5,12 +5,12 @@ import { CartWidget } from "./CartWidget";
 import './NavBar.scss';
 
 
-export const NavBar = () => {
+export const NavBar = ({theme,handleTheme}) => {
     return (
-        <header>
-            <DarkModeSwitch/>
-            <Logo/>
-            <CartWidget/>
+        <header className={theme ? 'headerLight' : 'headerDark'}>
+            <DarkModeSwitch theme={theme} handleTheme={handleTheme}/>
+            <Logo theme={theme}/>
+            <CartWidget theme={theme}/>
         </header>
     )
 }

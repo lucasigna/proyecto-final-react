@@ -3,7 +3,13 @@
 header{
     display: flex;
     justify-content: space-between;
-    margin: 10px 20px;
+    padding: 10px 20px;
+    &.headerLight{
+        background-color: $colorBlancoFondo;
+    }
+    &.headerDark{
+        background-color: $colorNegroFondo;
+    }
     img{
         height: 30px;
     }
@@ -22,6 +28,23 @@ header{
                 font-weight: 300;
             }
         }
+        &.light{
+            h1{
+                color: $colorNegroFondo;
+                span{
+                    color: $colorNegroFondo;
+                }
+            }
+        }
+        &.dark{
+            h1{
+                color: $colorBlancoFondo;
+                span{
+                    color: $colorBlancoFondo;
+                }
+            }
+        }
+        
     }
     .darkModeSwitch{
         display: flex;
@@ -71,39 +94,38 @@ header{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $colorNegroFondo;
     -webkit-transition: .4s;
     transition: .4s;
-}
-  
-.sliderMode:before {
-    position: absolute;
-    content: "";
-    height: 25px;
-    width: 25px;
-    left: 3px;
-    bottom: 2px;
-    background-color: $colorBlancoFondo;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-  
-input:focus + .sliderMode {
-    box-shadow: 0 0 1px #2196F3;
+    border-radius: 34px;
+    &:before{
+        position: absolute;
+        content: "";
+        height: 25px;
+        width: 25px;
+        left: 3px;
+        bottom: 2px;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 50%;
+    }
+    &.light{
+        background-color: $colorNegroFondo;
+        &:before{
+            background-color: $colorBlancoFondo;
+        }
+    }
+    &.dark{
+        background-color: $colorBlancoFondo;
+        &:before{
+            background-color: $colorNegroFondo;
+        }
+    }
 }
   
 input:checked + .sliderMode:before {
     -webkit-transform: translateX(28px);
     -ms-transform: translateX(28px);
     transform: translateX(29px);
-}
-
-.sliderMode.round {
-    border-radius: 34px;
-}
-  
-.sliderMode.round:before {
-    border-radius: 50%;
 }
 
 /* Para vista en tablet */

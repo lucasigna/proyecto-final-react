@@ -8,14 +8,28 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    &.light{
+        background-color: $colorBlanco;
+        h4,p{
+            color: $colorNegroFondo;
+        }
+        .slider{
+            background-color: $colorBlanco;   
+        }
+    }
+    &.dark{
+        background-color: $colorNegro;
+        h4,p{
+            color: $colorBlancoFondo;
+        }
+        .slider{
+            background-color: $colorNegro;   
+        }
+    }
     h4{
         text-align: center;
         font-size: 20px;
         margin: 5px 0;
-    }
-    .slider{
-        background-color: $colorBlanco;
-        
     }
 }
 

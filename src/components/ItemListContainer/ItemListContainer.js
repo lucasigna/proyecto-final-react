@@ -5,7 +5,7 @@ import { ItemListSkeleton } from "./ItemListSkeleton";
 import { pedirItems } from "../../helpers/pedirItems";
 
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({theme}) => {
 
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(false)
@@ -26,10 +26,10 @@ export const ItemListContainer = () => {
 
     return (
         <div className="ItemListContainer">
-            <h2>Nuestros productos</h2>
+            <h2 className={theme ? 'light' : 'dark'}>Nuestros productos</h2>
             { loading 
             ? <ItemListSkeleton/>
-            : <ItemList items={items}/>}
+            : <ItemList items={items} theme={theme}/>}
         </div>
     )
 }

@@ -1,16 +1,21 @@
 import React from 'react';
-import sol from './sol_negro.png';
-import luna from './luna_negra.png';
+import solNegro from './sol_negro.png';
+import lunaNegra from './luna_negra.png';
+import solBlanco from './sol_blanco.png';
+import lunaBlanca from './luna_blanca.png';
 
-export const DarkModeSwitch = () => {
+export const DarkModeSwitch = ({theme,handleTheme}) => {
+
+
+
     return (
         <div className="darkModeSwitch">
-            <img src={sol} alt="Sol - Modo diurno"/>
+            <img src={theme ? solNegro : solBlanco} alt="Sol - Modo diurno"/>
             <label className="switch">
-                <input type="checkbox"/>
-                <span className="sliderMode round"></span>
+                <input type="checkbox" onChange={handleTheme}/>
+                <span className={theme ? 'sliderMode light' : 'sliderMode dark'}></span>
             </label>
-            <img src={luna} alt="Luna - Modo nocturno"/>
+            <img src={theme ? lunaNegra : lunaBlanca} alt="Luna - Modo nocturno"/>
         </div>
     )
 }
