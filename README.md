@@ -1,3 +1,9 @@
+# E-commerce de scooters eléctricos
+
+![](https://github.com/lucasigna/proyecto-final-react/blob/master/preview.gif)
+
+Para este proyecto utilicé la librería Material UI para generar la carga "Skeleton" y los sliders en los filtros. También agregué un switch theme para cambiar entre light y dark mode.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
