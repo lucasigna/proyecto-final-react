@@ -5,7 +5,7 @@ export const pedirItems = () => {
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
             resolve(items)
-        }, 5000)
+        }, 2000)
 
     })
 }

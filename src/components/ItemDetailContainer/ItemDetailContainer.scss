@@ -1,0 +1,114 @@
+@import './../../variables';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.ItemDetailContainer{
+    padding: 20px;
+    &.light{
+        background-color: $colorBlancoFondo;
+    }
+    &.dark{
+        background-color: $colorNegroFondo;
+    }
+    .ItemDetail{
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: auto 2fr 1fr;
+        margin-bottom: 100px;
+        &.skeletonLight{
+            background-color: $colorBlanco;
+        }
+        &.skeletonDark{
+            background-color: $colorNegroFondo2;
+        }
+        .div1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+                border-radius: 20px;
+                width: 300px;
+                height: 300px;
+            }
+            h3{
+                margin: 10px 0;
+                font-size: 30px;
+                font-weight: 400;
+            }
+            button{
+                margin: 5px 0;
+                font-size: 17px;
+                width: 300px;
+            }
+        }
+        .div2{
+            margin: 10px;
+            h2{
+                margin: 0;
+                margin-bottom: 5px;
+                font-size: 30px;
+                font-weight: 600;
+            }
+            p{
+                margin: 10px;
+                font-size: 15px;
+                line-height: 22px;
+                font-weight: 400;
+            }
+        }
+        .div3{
+            p{
+                margin: 5px 0;
+                font-size: 20px;  
+            }
+        }
+        &.light{
+            background-color: $colorBlanco;
+            .div1{
+                h3{
+                    color: $colorNegroFondo;
+                }
+            }
+            .div2{
+                h2{
+                    color: $colorNegroFondo;
+                }
+                p{
+                    color: $colorLetraDescription;
+                }
+            }
+            .div3{
+                p{
+                    color: $colorNegroFondo;
+                }
+            }
+        }
+        &.dark{
+            background-color: $colorNegro;
+            .div1{
+                h3{
+                    color: $colorBlancoFondo;
+                }
+            }
+            .div2{
+                h2{
+                    color: $colorBlancoFondo;
+                }
+                p{
+                    color: $colorBlancoFondoSuave;
+                }
+            }
+            .div3{
+                p{
+                    color: $colorBlancoFondo;
+                }
+            }
+        }
+    }
+}
