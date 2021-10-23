@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react'
-import './AddCartAdvise.scss'
+import './AddCartAdvice.scss'
 import { CartContext } from '../../context/CartContext';
 
-export const AddCartAdvise = () => {
+export const AddCartAdvice = () => {
 
     const {nuevoItem,itemAgregado} = useContext(CartContext)
 
@@ -16,7 +16,7 @@ export const AddCartAdvise = () => {
         <>
         { nuevoItem 
         && 
-        <div className="addCartAdvise">
+        <div className="addCartAdvice">
             Agregado al carrito
         </div>
         }
