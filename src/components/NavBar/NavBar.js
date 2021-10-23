@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Logo } from "./Logo";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import { CartWidget } from "./CartWidget";
 import './NavBar.scss';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from './../../context/ThemeContext';
 
 
-export const NavBar = ({theme,handleTheme}) => {
+export const NavBar = () => {
+
+    const {theme} = useContext(ThemeContext)
+
     return (
         <header className={theme ? 'headerLight' : 'headerDark'}>
-            <DarkModeSwitch theme={theme} handleTheme={handleTheme}/>
-            <Link to="/"><Logo theme={theme}/></Link>
-            <Link to="/carrito"><CartWidget theme={theme}/></Link>
+            <DarkModeSwitch/>
+            <Link to="/"><Logo/></Link>
+            <Link to="/carrito"><CartWidget/></Link>
         </header>
     )
 }

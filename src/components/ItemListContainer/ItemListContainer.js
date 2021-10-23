@@ -1,11 +1,14 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useContext} from 'react'
 import "./ItemListContainer.scss";
 import { ItemList } from "./ItemList";
 import { ItemListSkeleton } from "./ItemListSkeleton";
 import { pedirItems } from "../../helpers/pedirItems";
+import { ThemeContext } from './../../context/ThemeContext';
 
 
-export const ItemListContainer = ({theme}) => {
+export const ItemListContainer = () => {
+
+    const {theme} = useContext(ThemeContext)
 
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(false)

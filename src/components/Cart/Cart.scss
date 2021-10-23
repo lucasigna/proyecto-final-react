@@ -1,0 +1,102 @@
+@import './../../variables';
+
+.cartView{
+    display: grid;
+    grid-template-areas: "h2 h2" "lista prices";
+    grid-template-columns: 4fr 2fr;
+    padding: 10px;
+    h2{
+        grid-area: h2;
+    }
+    
+    .list{
+        grid-area: lista;
+        .carritoVacio{
+            margin-top: 100px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .cartItem{        
+            background-color: $colorBlanco;
+            border-radius: 20px;
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            img{
+                height: 80px;
+                border-radius: 10px;
+            }
+            .priceItem{
+                font-weight: 700;
+                font-size: 20px;
+                margin-right: 10px;
+            }
+            h3{
+                width: 20vw;
+            }
+            &.light{
+                background-color: $colorBlanco;
+            }
+            &.dark{
+                background-color: $colorNegro;
+            }
+        }
+    }
+    
+    .priceOverview{
+        grid-area: prices;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px;
+        max-height: 500px;
+        position: sticky;
+        top: 20px;
+        h4{
+            font-size: 20px;
+            margin: 5px 0;
+            text-align: center;
+        }
+        .flexPrice{
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 10px;
+            
+        }
+        button{
+            margin: 10px;
+        }
+        p{
+            font-weight: 600;
+        }
+        .totalPrice{
+            text-align: center;
+            font-size: 18px;
+            span{
+                font-size: 20px;
+            }
+        }
+        &.light{
+            background-color: $colorBlanco;
+        }
+        &.dark{
+            background-color: $colorNegro;
+        }
+    }
+    &.light{
+        background-color: $colorBlancoFondo;
+        h4,h3,h2,.price,.priceItem,.totalPrice{
+            color: $colorNegroFondo;
+        }
+    }
+    &.dark{
+        background-color: $colorNegroFondo;
+        h4,h3,h2,.price,.priceItem,.totalPrice{
+            color: $colorBlanco;
+        }
+    }
+
+}

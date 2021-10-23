@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import "./Filters.scss"
 import { PriceFilter } from "./PriceFilter"
 import { PowerFilter } from "./PowerFilter"
 import { RangeFilter } from "./RangeFilter"
+import { ThemeContext } from './../../context/ThemeContext';
 
-export const Filters = ({theme}) => {
+export const Filters = () => {
+
+    const {theme} = useContext(ThemeContext)
+
     return (
         <div className={theme ? 'Filters light' : 'Filters dark'}>
             <PriceFilter/>

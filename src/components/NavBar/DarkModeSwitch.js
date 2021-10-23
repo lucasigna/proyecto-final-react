@@ -1,12 +1,13 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import solNegro from './sol_negro.png';
 import lunaNegra from './luna_negra.png';
 import solBlanco from './sol_blanco.png';
 import lunaBlanca from './luna_blanca.png';
+import { ThemeContext } from './../../context/ThemeContext';
 
-export const DarkModeSwitch = ({theme,handleTheme}) => {
+export const DarkModeSwitch = () => {
 
-
+    const {theme,handleTheme} = useContext(ThemeContext)
 
     return (
         <div className="darkModeSwitch">

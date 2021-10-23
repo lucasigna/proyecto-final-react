@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router'
 import { ItemDetail } from "./ItemDetail";
 import { pedirItems } from "../../helpers/pedirItems";
 import './ItemDetailContainer.scss';
 import { ItemDetailSkeleton } from './ItemDetailSkeleton';
+import { ThemeContext } from './../../context/ThemeContext';
 
-export const ItemDetailContainer = ({theme}) => {
+export const ItemDetailContainer = () => {
+
+    const {theme} = useContext(ThemeContext)
 
     const [item, setItem] = useState([])
     const [loading, setLoading] = useState(false)
@@ -29,8 +32,8 @@ export const ItemDetailContainer = ({theme}) => {
     return (
         <section className={theme ? 'ItemDetailContainer light' : 'ItemDetailContainer dark'}>
             {
-                loading ? <ItemDetailSkeleton theme={theme}/>
-                : <ItemDetail theme={theme} {...item}/>
+                loading ? <ItemDetailSkeleton/>
+                : <ItemDetail {...item}/>
             }
         </section>
     )

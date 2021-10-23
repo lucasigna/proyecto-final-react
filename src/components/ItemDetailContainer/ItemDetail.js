@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { useHistory } from 'react-router'
+import { CartItemQuantity } from '../CartItemQuantity/CartItemQuantity';
+import { ThemeContext } from './../../context/ThemeContext';
+import { CartContext } from './../../context/CartContext';
 
-export const ItemDetail = ({id,name,description,price,range,power,speed,image,theme}) => {
+export const ItemDetail = ({id,name,description,price,range,power,speed,image}) => {
+
+    const {theme} = useContext(ThemeContext)
+    const {getCantidad,createItem} = useContext(CartContext)
 
     const {goBack} = useHistory()
 
@@ -10,7 +16,7 @@ export const ItemDetail = ({id,name,description,price,range,power,speed,image,th
             <div className="div1">
                 <img src={image} alt='Foto scooter'/>
                 <h3>${price}</h3>
-                <button className={theme ? 'btn btnLight' : 'btn btnDark'}>Agregar al carrito</button>
+                <CartItemQuantity item={createItem(name,id,getCantidad(id),price)}/>
                 <button className={theme ? 'btnBack btnBackLight' : 'btnBack btnBackDark'} onClick={ () => goBack() }>Volver</button>
             </div>
             <div className="div2">

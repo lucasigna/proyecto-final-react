@@ -1,7 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { ThemeContext } from './../../context/ThemeContext';
 
-export const Item = ({id,name,price,image,theme}) => {
+export const Item = ({id,name,price,image}) => {
+
+    const {theme} = useContext(ThemeContext)
+
+    
     return (
         <Link to={`/productos/${id}`} className={theme ? 'item light' : 'item dark'}>
             <img src={image} alt="Imagen del producto"/>

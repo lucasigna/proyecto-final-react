@@ -1,0 +1,26 @@
+@import './../../variables';
+
+.cartItemQuantity{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    p{
+        padding: 5px 20px;
+        border-radius: 7px;
+        font-weight: 800;
+        width: 60px;
+        text-align: center;
+    }
+    .upAndDown{
+        background-color: $colorAzul;
+        color: $colorBlancoFondo;
+        padding: 5px 20px;
+        border-radius: 7px;
+        width: 60px;
+    }
+    .quantity{
+        background-color: $colorBlancoFondo;
+        color: $colorNegroFondo;
+        margin: 0 5px;
+    }
+}

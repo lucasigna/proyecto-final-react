@@ -1,7 +1,11 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import Skeleton from '@material-ui/core/Skeleton';
+import { ThemeContext } from './../../context/ThemeContext';
 
-export const ItemDetailSkeleton = ({theme}) => {
+export const ItemDetailSkeleton = () => {
+
+    const {theme} = useContext(ThemeContext)
+
     return (
         <div className={theme ? 'ItemDetail skeletonLight' : 'ItemDetail skeletonDark'}>
             <div className="div1">
