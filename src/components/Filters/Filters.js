@@ -4,13 +4,14 @@ import { PriceFilter } from "./PriceFilter"
 import { PowerFilter } from "./PowerFilter"
 import { RangeFilter } from "./RangeFilter"
 import { ThemeContext } from './../../context/ThemeContext';
+import { FilterContext } from './../../context/FilterContext';
 
 export const Filters = () => {
 
     const {theme} = useContext(ThemeContext)
+    const {aplicarFiltros} = useContext(FilterContext)
 
     const { innerWidth } = window;
-    console.log(innerWidth);
     let init = true;
 
     if(innerWidth < 700){
@@ -39,7 +40,7 @@ export const Filters = () => {
             <PriceFilter estilo={showFilter ? styleShow : styleHide}/>
             <PowerFilter estilo={showFilter ? styleShow : styleHide}/>
             <RangeFilter estilo={showFilter ? styleShow : styleHide}/>
-            <button style={showFilter ? styleShow : styleHide} className={theme ? 'btn btnLight' : 'btn btnDark'}>Aplicar filtros</button>
+            <button style={showFilter ? styleShow : styleHide} className={theme ? 'btn btnLight' : 'btn btnDark'} onClick={aplicarFiltros}>Aplicar filtros</button>
         </div>
     )
 }

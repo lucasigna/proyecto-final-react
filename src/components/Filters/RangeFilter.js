@@ -1,5 +1,6 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
 import Slider from '@material-ui/core/Slider'
+import { FilterContext } from './../../context/FilterContext';
 
 function valuetext(value) {
   return `${value} Km`;
@@ -7,9 +8,12 @@ function valuetext(value) {
 
 export const RangeFilter = ({estilo}) => {
     
-    const [value, setValue] = useState([8, 100]);
+    const [value, setValue] = useState([10, 50]);
+
+    const {newRange} = useContext(FilterContext)
 
     const handleChange = (event, newValue) => {
+        newRange(newValue)
         setValue(newValue);
     };
 
@@ -24,8 +28,8 @@ export const RangeFilter = ({estilo}) => {
                 valueLabelDisplay="auto"
                 getAriaValueText={valuetext}
                 disableSwap={true}
-                max={100}
-                min={8}
+                max={50}
+                min={10}
             />
             <p>Mín: {value[0]} Km</p>
             <p>Max: {value[1]} Km</p>

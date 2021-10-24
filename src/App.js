@@ -9,6 +9,7 @@ import { Cart } from './components/Cart/Cart';
 import { ThemeContext } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
 import { AddCartAdvice } from './components/AddCartAdvice/AddCartAdvice';
+import { FilterProvider } from './context/FilterContext';
 
 function App() {
 
@@ -23,10 +24,12 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <main className={theme ? 'main mainLight' : 'main mainDark'}>
-              <Filters/>
-              <ItemListContainer/>
-            </main>
+            <FilterProvider>
+              <main className={theme ? 'main mainLight' : 'main mainDark'}>
+                <Filters/>
+                <ItemListContainer/>
+              </main>
+            </FilterProvider>
           </Route>
           <Route exact path="/productos/:itemId">
             <ItemDetailContainer/>
