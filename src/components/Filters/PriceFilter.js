@@ -5,16 +5,16 @@ function valuetext(value) {
   return `$${value}`;
 }
 
-export const PriceFilter = () => {
+export const PriceFilter = ({estilo}) => {
 
     const [value, setValue] = useState([5000, 50000]);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (newValue) => {
         setValue(newValue);
     };
 
     return (
-        <div>
+        <div style={estilo}>
             <h4>Precio</h4>
             <Slider
                 className="slider"

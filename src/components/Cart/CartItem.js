@@ -8,10 +8,12 @@ export const CartItem = ({item}) => {
 
     return (
         <div className={theme ? "cartItem light" : "cartItem dark"}>
-            <img src="https://dapas.com.ar/wp-content/uploads/2020/04/H6.jpg" alt="cart"/>
-            <h3>{item.name}</h3>
+            <div className="imgName">
+                <img src={item.image} alt="cart"/>
+                <h3>{item.name}</h3>
+            </div>
             <CartItemQuantity item={item}/>
-            <p className="priceItem">${item.precio}</p>
+            <p className="priceItem">${item.precio.toLocaleString('es-AR')}</p>
         </div>
     )
 }

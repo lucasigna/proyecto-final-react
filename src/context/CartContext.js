@@ -85,12 +85,13 @@ export const CartProvider = ({children}) => {
         localStorage.setItem('carrito', JSON.stringify(carrito))
     }, [carrito])
 
-    function createItem(name,id,cantidad,price) {
+    function createItem(name,id,cantidad,price,image) {
         return {
             name: name,
             id: id,
             cantidad: cantidad,
-            precio: price
+            precio: price,
+            image: image
         }
     }
 

@@ -5,16 +5,16 @@ function valuetext(value) {
   return `${value} Km`;
 }
 
-export const RangeFilter = () => {
+export const RangeFilter = ({estilo}) => {
     
     const [value, setValue] = useState([8, 100]);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (newValue) => {
         setValue(newValue);
     };
 
     return (
-        <div>
+        <div style={estilo}>
             <h4>Autonomía</h4>
             <Slider
                 className="slider"

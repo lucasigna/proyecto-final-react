@@ -16,7 +16,7 @@ export const ItemDetail = ({id,name,description,price,range,power,speed,image}) 
             <div className="div1">
                 <img src={image} alt='Foto scooter'/>
                 <h3>${price}</h3>
-                <CartItemQuantity item={createItem(name,id,getCantidad(id),price)}/>
+                <CartItemQuantity item={createItem(name,id,getCantidad(id),price,image)}/>
                 <button className={theme ? 'btnBack btnBackLight' : 'btnBack btnBackDark'} onClick={ () => goBack() }>Volver</button>
             </div>
             <div className="div2">

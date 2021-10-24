@@ -5,16 +5,16 @@ function valuetext(value) {
   return `${value}W`;
 }
 
-export const PowerFilter = () => {
+export const PowerFilter = ({estilo}) => {
     
     const [value, setValue] = useState([20, 1000]);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (newValue) => {
         setValue(newValue);
     };
 
     return (
-        <div>
+        <div style={estilo}>
             <h4>Potencia</h4>
             <Slider
                 className="slider"

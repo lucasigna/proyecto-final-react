@@ -2,8 +2,8 @@ import React,{useEffect,useState,useContext} from 'react'
 import "./ItemListContainer.scss";
 import { ItemList } from "./ItemList";
 import { ItemListSkeleton } from "./ItemListSkeleton";
-import { pedirItems } from "../../helpers/pedirItems";
 import { ThemeContext } from './../../context/ThemeContext';
+import { getFirestore } from './../../firebase/config';
 
 
 export const ItemListContainer = () => {
@@ -16,14 +16,19 @@ export const ItemListContainer = () => {
     useEffect(()=>{
         setLoading(true)
 
-        pedirItems()
-            .then((res) => {
-                setItems(res)
-            })
-            .catch((err) => console.log(err))
-            .finally(() => {
-                setLoading(false)
-            })
+        const db = getFirestore();
+        const productos = db.collection("productos");
+
+        productos.get()
+        .then( (resp) => {
+            const prods = resp.docs.map( (doc) => doc.data());
+            setItems(prods)
+        })
+        .catch((err) => console.log(err))
+        .finally(() => {
+            setLoading(false)
+        })
+            
 
     }, [])
 

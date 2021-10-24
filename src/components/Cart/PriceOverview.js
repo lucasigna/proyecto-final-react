@@ -19,13 +19,13 @@ export const PriceOverview = () => {
                 return (
                     <div className="flexPrice">
                         <p className="price">{item.cantidad}x {item.name}</p>
-                        <p className="price">${item.precio*item.cantidad}</p>
+                        <p className="price">${(item.precio*item.cantidad).toLocaleString('es-AR')}</p>
                     </div>
                 )
                 
             })}
             <hr/>
-            <p className="totalPrice">Total a pagar: <span>${calcularPrecioTotal()}</span></p>
+            <p className="totalPrice">Total a pagar: <span>${calcularPrecioTotal().toLocaleString('es-AR')}</span></p>
             <button className={theme ? 'btn btnLight' : 'btn btnDark'}>Pagar</button>
         </div>
     )
