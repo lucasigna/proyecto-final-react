@@ -55,6 +55,9 @@
             display: none;
             transition: all 0.2s ease;
         }
+        p:last-child{
+            margin-bottom: 10px;
+        }
     }
 
 }

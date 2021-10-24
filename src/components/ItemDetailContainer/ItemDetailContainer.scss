@@ -112,3 +112,16 @@
         }
     }
 }
+
+/* Para vista en tablet y celular */
+
+@media only screen and (max-width: 900px) {
+
+    .ItemDetailContainer{
+        .ItemDetail{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
