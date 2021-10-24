@@ -11,8 +11,13 @@ export const Filters = () => {
 
     const { innerWidth } = window;
     console.log(innerWidth);
+    let init = true;
 
-    const [showFilter,setShowFilter] = useState(false);
+    if(innerWidth < 700){
+        init = false;
+    }
+
+    const [showFilter,setShowFilter] = useState(true);
 
     const styleShow = {
         display: 'initial',
@@ -30,7 +35,7 @@ export const Filters = () => {
 
     return (
         <div className={theme ? 'Filters light' : 'Filters dark'}>
-            <button id="showFilters" className={theme ? 'btn btnLight' : 'btn btnDark'} onClick={showFilters}>Filtros</button>
+            <button id="showFilters" className={theme ? 'btn btnLight' : 'btn btnDark'} onClick={showFilters}>{showFilter ? 'Ocultar filtros' : 'Mostrar filtros'}</button>
             <PriceFilter estilo={showFilter ? styleShow : styleHide}/>
             <PowerFilter estilo={showFilter ? styleShow : styleHide}/>
             <RangeFilter estilo={showFilter ? styleShow : styleHide}/>
