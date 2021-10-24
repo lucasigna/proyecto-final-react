@@ -9,7 +9,7 @@ export const RangeFilter = ({estilo}) => {
     
     const [value, setValue] = useState([8, 100]);
 
-    const handleChange = (newValue) => {
+    const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 

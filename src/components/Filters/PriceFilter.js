@@ -9,7 +9,7 @@ export const PriceFilter = ({estilo}) => {
 
     const [value, setValue] = useState([5000, 50000]);
 
-    const handleChange = (newValue) => {
+    const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 

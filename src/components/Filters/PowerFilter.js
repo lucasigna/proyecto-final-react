@@ -9,7 +9,7 @@ export const PowerFilter = ({estilo}) => {
     
     const [value, setValue] = useState([20, 1000]);
 
-    const handleChange = (newValue) => {
+    const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 

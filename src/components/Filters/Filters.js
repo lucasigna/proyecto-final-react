@@ -17,7 +17,7 @@ export const Filters = () => {
         init = false;
     }
 
-    const [showFilter,setShowFilter] = useState(true);
+    const [showFilter,setShowFilter] = useState(init);
 
     const styleShow = {
         display: 'initial',
