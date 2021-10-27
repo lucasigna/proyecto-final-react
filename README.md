@@ -12,7 +12,7 @@ Para probar el proyecto localmente tenes que tener instalado [Node](https://node
 
 * [Material UI](https://mui.com/) - Para generar las cargas "Skeleton" y los Sliders en los filtros
 
-* [Firebase](https://mui.com/) - Para almacenar los productos y sus fotos.
+* [Firebase](https://firebase.google.com/) - Para almacenar los productos y sus fotos.
 
 ## Instalación
 
