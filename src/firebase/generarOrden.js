@@ -6,16 +6,14 @@ export const generarOrden =  (datos, carrito, total) => {
 
     return new Promise(async (resolve, reject) => {
 
-        // generar el objeto orden
         const orden = {
             buyer: datos,
             items: carrito.map((el) => ({id: el.id, precio: el.precio, cantidad: el.cantidad})),
             total: total,
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
-        // enviar la orden a firestore
 
-        // batch de atualizacion
+        // Hago batch para atualizar
 
         const db = getFirestore()
         const orders = db.collection('orders')
@@ -26,7 +24,7 @@ export const generarOrden =  (datos, carrito, total) => {
         const batch = db.batch()
 
         const outOfStock = []
-
+        // Controlo que haya stock
         query.docs.forEach((doc) => {
             const itemInCart = carrito.find(prod => prod.id === doc.id)
 
