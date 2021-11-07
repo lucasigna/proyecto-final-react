@@ -2,6 +2,7 @@ import React, { useContext, useEffect} from 'react'
 import { CartItem } from './CartItem';
 import { CartContext } from './../../context/CartContext';
 import { ThemeContext } from '../../context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 export const CartListItems = () => {
 
@@ -14,8 +15,7 @@ export const CartListItems = () => {
 
     return (
         <div className="list">
-            { carrito.length > 0 ? carrito.map( (item) => <CartItem item={item}/>)
-            : <p className={theme ? "carritoVacio light" : "carritoVacio dark"}>Carrito vacío</p> }
+            { carrito.map( (item) => <CartItem item={item}/>) }
         </div>
     )
 }

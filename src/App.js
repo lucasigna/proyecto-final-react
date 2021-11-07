@@ -10,6 +10,7 @@ import { ThemeContext } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
 import { AddCartAdvice } from './components/AddCartAdvice/AddCartAdvice';
 import { FilterProvider } from './context/FilterContext';
+import { Checkout } from './components/Checkout/Checkout';
 
 function App() {
 
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route exact path="/carrito">
             <Cart/>
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout/>
           </Route>
           <Route path="*">
               <Redirect to="/"/>

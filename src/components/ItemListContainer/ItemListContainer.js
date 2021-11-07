@@ -5,6 +5,7 @@ import { ItemListSkeleton } from "./ItemListSkeleton";
 import { ThemeContext } from './../../context/ThemeContext';
 import { getFirestore } from './../../firebase/config';
 import { FilterContext } from './../../context/FilterContext';
+import { ItemsNotFound } from './ItemsNotFound';
 
 
 export const ItemListContainer = () => {
@@ -48,7 +49,14 @@ export const ItemListContainer = () => {
             <h2 className={theme ? 'light' : 'dark'}>Nuestros productos</h2>
             { loading 
             ? <ItemListSkeleton/>
-            : <ItemList items={items} theme={theme}/>}
+            :  
+            items.length > 0 ? 
+                <ItemList items={items} theme={theme}/>
+                :
+                <ItemsNotFound/>
+             
+                
+            }
         </div>
     )
 }

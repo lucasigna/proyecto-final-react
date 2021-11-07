@@ -11,6 +11,7 @@ export const ItemDetail = ({id,name,description,price,range,power,speed,image}) 
 
     const {goBack} = useHistory()
 
+
     return (
         <div className={theme ? 'ItemDetail light' : 'ItemDetail dark'}>
             <div className="div1">

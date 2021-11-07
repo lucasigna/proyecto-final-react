@@ -1,6 +1,7 @@
 import React, { useContext, useEffect} from 'react'
 import { ThemeContext } from '../../context/ThemeContext';
 import { CartContext } from './../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 export const PriceOverview = () => {
 
@@ -26,7 +27,9 @@ export const PriceOverview = () => {
             })}
             <hr/>
             <p className="totalPrice">Total a pagar: <span>${calcularPrecioTotal().toLocaleString('es-AR')}</span></p>
-            <button className={theme ? 'btn btnLight' : 'btn btnDark'}>Pagar</button>
+            <Link to="/checkout" className="buttonLink">
+                <button className={theme ? 'btn btnLight' : 'btn btnDark'}>Ir a finalizar comprar</button>
+            </Link>
         </div>
     )
 }

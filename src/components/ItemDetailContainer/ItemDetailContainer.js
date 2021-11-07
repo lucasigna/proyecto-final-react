@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router'
 import { ItemDetail } from "./ItemDetail";
 import './ItemDetailContainer.scss';
 import { ItemDetailSkeleton } from './ItemDetailSkeleton';
@@ -10,10 +10,12 @@ export const ItemDetailContainer = () => {
 
     const {theme} = useContext(ThemeContext)
 
-    const [item, setItem] = useState([])
+    const [item, setItem] = useState({})
     const [loading, setLoading] = useState(false)
 
     const {itemId} = useParams()
+
+    const {push} = useHistory()
 
     useEffect(()=>{
         setLoading(true)
@@ -24,6 +26,9 @@ export const ItemDetailContainer = () => {
         prod.get()
         .then( (resp) => {
             setItem(resp.data())
+            if(resp.data() === undefined) {
+                push("/") // Condicional por si se busca una dirección incorrecta
+            }
         })
         .catch((err) => console.log(err))
         .finally(() => {

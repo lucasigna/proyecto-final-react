@@ -1,0 +1,52 @@
+@import './../../variables';
+
+.checkout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 65vh;
+    h2{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        .inputCheckout{
+            margin: 10px 0;
+        }
+    }
+    &.light{
+        background-color: $colorBlancoFondo;
+        h2{
+            color: $colorNegroFondo;
+        }
+        form{
+            .inputCheckout{
+                input,label{
+                    color: $colorNegroFondo;
+                }
+                fieldset{
+                    border-color: $colorNegroFondo;
+                }
+            }
+        }
+    }
+    &.dark{
+        background-color: $colorNegroFondo;
+        h2{
+            color: $colorBlancoFondo;
+        }
+        form{
+            .inputCheckout{
+                input,label{
+                    color: $colorBlancoFondo;
+                }
+                fieldset{
+                    border-color: $colorBlancoFondo;
+                }
+            }
+        }
+    }
+}
