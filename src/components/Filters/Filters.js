@@ -34,6 +34,16 @@ export const Filters = () => {
         setShowFilter(!showFilter)
     }
 
+    // Evento para manejar filtros responsive
+    window.addEventListener('resize', () => {
+        const { innerWidth } = window;
+        if(innerWidth < 700){
+            setShowFilter(false)
+        } else {
+            setShowFilter(true)
+        }
+    });
+
     return (
         <div className={theme ? 'Filters light' : 'Filters dark'}>
             <button id="showFilters" className={theme ? 'btn btnLight' : 'btn btnDark'} onClick={showFilters}>{showFilter ? 'Ocultar filtros' : 'Mostrar filtros'}</button>
